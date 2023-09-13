@@ -9,10 +9,10 @@ shopt -s extglob
 # for detecting when -l 'logs/*.log' matches nothing
 shopt -s nullglob
 
+export the variables here
 export PHP_FPM_DEFAULT_SOCKET_TIMEOUT=3000
 export PHP_FPM_POST_MAX_SIZE=3072M
 export PHP_FPM_UPLOAD_MAX_FILESIZE=3072M
-
 
 if ! type -p "realpath" > /dev/null; then
 	# macOS doesn't have realpath
@@ -324,9 +324,10 @@ if [[ "$#" == "1" ]]; then
 		# strip trailing slashes if present
 		DOCUMENT_ROOT=${DOCUMENT_ROOT%%*(/)} # powered by extglob
 		if [[ $verbose ]]; then
-			echo "*-DOCUMENT_ROOT changed to '$DOCUMENT_ROOT'" >&2
+			echo "DOCUMENT_ROOT changed to '$DOCUMENT_ROOT'" >&2
 		else
-			echo "*DOCUMENT_ROOT changed to '${1%%*(/)}/'" >&2
+			echo "DOCUMENT_ROOT changed to '${1%%*(/)}/'" >&2
+			echo "default socket'$PHP_FPM_DEFAULT_SOCKET_TIMEOUT'"
 		fi
 	fi
 fi
