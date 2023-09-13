@@ -319,9 +319,9 @@ if [[ "$#" == "1" ]]; then
 		# strip trailing slashes if present
 		DOCUMENT_ROOT=${DOCUMENT_ROOT%%*(/)} # powered by extglob
 		if [[ $verbose ]]; then
-			echo "-DOCUMENT_ROOT changed to '$DOCUMENT_ROOT'" >&2
+			echo "DOCUMENT_ROOT changed to '$DOCUMENT_ROOT'" >&2
 		else
-			echo "- DOCUMENT_ROOT changed to '${1%%*(/)}/'" >&2
+			echo "DOCUMENT_ROOT changed to '${1%%*(/)}/'" >&2
 		fi
 	fi
 fi
